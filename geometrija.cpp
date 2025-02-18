@@ -27,6 +27,14 @@ Trikampis3D::Trikampis3D(const Taskas3D& a, const Taskas3D& b, const Taskas3D& c
 
 }
 
+void Taskas3D::keiskTaska(const double naujasX, const double naujasY, const double naujasZ){
+    
+    this->x = naujasX;
+    this->y = naujasY;
+    this->z = naujasZ;
+
+}
+
 double Taskas3D::atstumasIkiKoordinaciuPradzios(const Taskas3D& taskas){
       
       return sqrt(taskas.x * taskas.x + taskas.y * taskas.y + taskas.z * taskas.z);

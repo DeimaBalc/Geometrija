@@ -22,6 +22,8 @@ int main(){
     pB.rasykTaska(pB);
     std::cout<< std::endl;
     
+
+    
     std::cout << "Atstumas nuo pB iki k. centro: " << pB.atstumasIkiKoordinaciuPradzios(pB) << std::endl; 
     Atkarpa3D atkAB{pA, pB};
     std::cout << "Atkarpos AB ilgis: " << atkAB.atkarposIlgis(atkAB) << std::endl;

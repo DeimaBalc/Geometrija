@@ -12,6 +12,7 @@ class Taskas3D{
       double atstumasIkiKoordinaciuPradzios(const Taskas3D& taskas);
       static double atstumasTarpTasku(const Taskas3D& taskas1, const Taskas3D& taskas2);
       static void skaitykTaska(Taskas3D& taskas);
+      void keiskTaska(const double naujasX, const double naujasY, const double naujasZ);
       void rasykTaska(const Taskas3D& taskas);
 };
 
