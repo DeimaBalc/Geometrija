@@ -63,8 +63,9 @@ void Taskas3D::skaitykTaska(Taskas3D& taskas){
 
 }
 
-void Taskas3D::rasykTaska(const Taskas3D& taskas){
-    std::cout << "(" << taskas.x << ", " <<  taskas.y << ", " << taskas.z << ")";
+void Taskas3D::rasykTaska() const{
+    
+    std::cout << "Tasko koordinates (" << this->x << ", " <<  this->y << ", " << this->z << ")";
     
 }
 
