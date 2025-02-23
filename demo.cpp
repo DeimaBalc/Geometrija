@@ -21,6 +21,9 @@ int main(){
     std::cout << "Taskas pB: ";
     pB.rasykTaska();
     std::cout<< std::endl;
+
+    pB.keiskX(0.5);
+    pC.keiskTaska(0, 0, 0);
     
 
     

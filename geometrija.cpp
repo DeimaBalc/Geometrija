@@ -35,6 +35,24 @@ void Taskas3D::keiskTaska(const double naujasX, const double naujasY, const doub
 
 }
 
+void Taskas3D::naujasX(const double naujasX){
+
+    this->x = naujasX;
+
+}
+
+void Taskas3D::naujasY(const double naujasY){
+
+    this->Y = naujasY;
+
+}
+
+void Taskas3D::naujasZ(const double naujasZ){
+
+    this->Z = naujasZ;
+
+}
+
 double Taskas3D::atstumasIkiKoordinaciuPradzios(const Taskas3D& taskas){
       
       return sqrt(taskas.x * taskas.x + taskas.y * taskas.y + taskas.z * taskas.z);
@@ -75,7 +93,7 @@ double Trikampis3D::trikampioPlotas(const Trikampis3D& trikampis){
     double ab=Taskas3D::atstumasTarpTasku(trikampis.a, trikampis.b);
     double bc=Taskas3D::atstumasTarpTasku(trikampis.b, trikampis.c);
     
-    double p=(ac+ab+bc)/2;
+    double p=Trikampis3D::trikampioPlotas(trikampis);
     double plotas=sqrt(p*(p-ac)*(p-ab)*(p-bc));
     
     return plotas;

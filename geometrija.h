@@ -14,6 +14,9 @@ class Taskas3D{
       static void skaitykTaska(Taskas3D& taskas);
       void keiskTaska(const double naujasX, const double naujasY, const double naujasZ);
       void rasykTaska() const;
+      void keiskX(const double naujasX);
+      void keiskY(const double naujasY);
+      void keiskZ(const double naujasZ);
 };
 
 
