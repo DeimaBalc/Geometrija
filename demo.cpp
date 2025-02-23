@@ -13,13 +13,13 @@ int main(){
     std::cout<<"Įvesktite tašką pA: "<<std::endl;
     pA.skaitykTaska(pA);
     std::cout << "Taskas pA: ";
-    pA.rasykTaska(pA);
+    pA.rasykTaska();
     std::cout<< std::endl; 
 
     std::cout<<"Įvesktite tašką pB: "<<std::endl;
     pB.skaitykTaska(pB);
     std::cout << "Taskas pB: ";
-    pB.rasykTaska(pB);
+    pB.rasykTaska();
     std::cout<< std::endl;
     
 
