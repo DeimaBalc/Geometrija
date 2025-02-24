@@ -19,13 +19,8 @@ Atkarpa3D::Atkarpa3D(const Taskas3D& a, const Taskas3D& b){
 
 }
 
-Trikampis3D::Trikampis3D(const Taskas3D& a, const Taskas3D& b, const Taskas3D& c){
+Trikampis3D::Trikampis3D(const Atkarpa3D& a, const Atkarpa3D& b, const Atkarpa3D& c): a(a), b(b), c(c) {}
 
-    this-> a = a;
-    this-> b = b;
-    this-> c = c;
-
-}
 
 void Taskas3D::keiskTaska(const double naujasX, const double naujasY, const double naujasZ){
     
@@ -35,43 +30,37 @@ void Taskas3D::keiskTaska(const double naujasX, const double naujasY, const doub
 
 }
 
-void Taskas3D::naujasX(const double naujasX){
+void Taskas3D::keiskX(const double naujasX){
 
     this->x = naujasX;
 
 }
 
-void Taskas3D::naujasY(const double naujasY){
+void Taskas3D::keiskY(const double naujasY){
 
-    this->Y = naujasY;
-
-}
-
-void Taskas3D::naujasZ(const double naujasZ){
-
-    this->Z = naujasZ;
+    this->y = naujasY;
 
 }
 
-double Taskas3D::atstumasIkiKoordinaciuPradzios(const Taskas3D& taskas){
+void Taskas3D::keiskZ(const double naujasZ){
+
+    this->z = naujasZ;
+
+}
+
+double Taskas3D::atstumasIkiKoordinaciuPradzios(){
       
-      return sqrt(taskas.x * taskas.x + taskas.y * taskas.y + taskas.z * taskas.z);
+      return sqrt(x * x + y * y + z * z);
       
 }
 
-double Taskas3D::atstumasTarpTasku(const Taskas3D& taskas1, const Taskas3D& taskas2){
+double Atkarpa3D::atstumasTarpTasku(){
       
-      double dx = taskas2.x - taskas1.x;
-      double dy = taskas2.y - taskas1.y;
-      double dz = taskas2.z - taskas1.z;
- 
+      double dx = b.gaukX() - a.gaukX();
+      double dy = b.gaukY() - a.gaukY();
+      double dz = b.gaukZ() - a.gaukZ();
+
       return sqrt(dx * dx + dy * dy + dz * dz);
-
-}
-
-double Atkarpa3D::atkarposIlgis(const Atkarpa3D& atkarpa){
-     
-     return Taskas3D::atstumasTarpTasku(atkarpa.a, atkarpa.b);
 
 }
 
@@ -87,28 +76,21 @@ void Taskas3D::rasykTaska() const{
     
 }
 
-double Trikampis3D::trikampioPlotas(const Trikampis3D& trikampis){
+double Trikampis3D::trikampioPlotas(){
     
-    double ac=Taskas3D::atstumasTarpTasku(trikampis.a, trikampis.c);
-    double ab=Taskas3D::atstumasTarpTasku(trikampis.a, trikampis.b);
-    double bc=Taskas3D::atstumasTarpTasku(trikampis.b, trikampis.c);
+    double ab=a.atstumasTarpTasku();
+    double bc=b.atstumasTarpTasku();
+    double ac=c.atstumasTarpTasku();
     
-    double p=Trikampis3D::trikampioPlotas(trikampis);
-    double plotas=sqrt(p*(p-ac)*(p-ab)*(p-bc));
+    double p=trikampioPerimetras();
     
-    return plotas;
+    return sqrt(p*(p-ac)*(p-ab)*(p-bc));;
 
 }
 
-double Trikampis3D::trikampioPerimetras(const Trikampis3D& trikampis){
+double Trikampis3D::trikampioPerimetras(){
     
-    double ac=Taskas3D::atstumasTarpTasku(trikampis.a, trikampis.c);
-    double ab=Taskas3D::atstumasTarpTasku(trikampis.a, trikampis.b);
-    double bc=Taskas3D::atstumasTarpTasku(trikampis.b, trikampis.c);
-    
-    double perimetras=(ac+ab+bc);
-    
-    return perimetras;
+    return a.atstumasTarpTasku()+b.atstumasTarpTasku()+c.atstumasTarpTasku();
 
 }
 

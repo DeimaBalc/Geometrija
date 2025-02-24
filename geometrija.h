@@ -9,14 +9,17 @@ class Taskas3D{
    public:
       Taskas3D();
       Taskas3D(const double x, const double y, const double z);
-      double atstumasIkiKoordinaciuPradzios(const Taskas3D& taskas);
-      static double atstumasTarpTasku(const Taskas3D& taskas1, const Taskas3D& taskas2);
+      double atstumasIkiKoordinaciuPradzios();
       static void skaitykTaska(Taskas3D& taskas);
       void keiskTaska(const double naujasX, const double naujasY, const double naujasZ);
       void rasykTaska() const;
       void keiskX(const double naujasX);
       void keiskY(const double naujasY);
       void keiskZ(const double naujasZ);
+
+      double gaukX() const { return x; }
+		double gaukY() const { return y; }
+		double gaukZ() const { return z; }
 };
 
 
@@ -26,18 +29,18 @@ class Atkarpa3D{
       Taskas3D b;
    public:
       Atkarpa3D(const Taskas3D& a, const Taskas3D& b);
-      double atkarposIlgis(const Atkarpa3D& atkarpa);
+      double atstumasTarpTasku();
 };
 
 class Trikampis3D{
    private:
-      Taskas3D a;
-      Taskas3D b;
-      Taskas3D c;
+      Atkarpa3D a;
+      Atkarpa3D b;
+      Atkarpa3D c;
    public:
-      Trikampis3D(const Taskas3D& a, const Taskas3D& b, const Taskas3D& c);
-      double trikampioPlotas(const Trikampis3D& trikampis);
-      double trikampioPerimetras(const Trikampis3D& trikampis);
+      Trikampis3D(const Atkarpa3D& a, const Atkarpa3D& b, const Atkarpa3D& c);
+      double trikampioPlotas();
+      double trikampioPerimetras();
 };
 
 #endif
