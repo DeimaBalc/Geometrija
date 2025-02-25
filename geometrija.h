@@ -22,7 +22,6 @@ class Taskas3D{
 		double gaukZ() const { return z; }
 };
 
-
 class Atkarpa3D{
    private:
       Taskas3D a;
